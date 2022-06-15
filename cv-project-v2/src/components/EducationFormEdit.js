@@ -16,6 +16,7 @@ class EducationFormEdit extends Component {
 			},
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.confirmEdit = this.confirmEdit.bind(this);
 	}
 
 	handleChange(e) {
@@ -26,6 +27,10 @@ class EducationFormEdit extends Component {
 				[prop]: e.target.value,
 			},
 		}));
+	}
+
+	confirmEdit(e) {
+		this.props.confirmEditEducation(e, this.state.exp);
 	}
 
 	render() {
@@ -73,7 +78,7 @@ class EducationFormEdit extends Component {
 					onChange={this.handleChange}
 					data-form-id={this.state.exp.id}
 				></textarea>
-				<button data-form-id={this.state.exp.id} onClick={this.addEducation}>
+				<button data-id={this.state.exp.id} onClick={this.confirmEdit}>
 					Confirm Edit
 				</button>
 			</div>

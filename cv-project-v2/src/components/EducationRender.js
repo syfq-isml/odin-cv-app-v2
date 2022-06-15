@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import uniqid from "uniqid";
+
 class EducationRender extends Component {
 	constructor(props) {
 		super(props);
@@ -13,7 +15,7 @@ class EducationRender extends Component {
 					return (
 						<div
 							className="flex-row-container fl-jcsb cv-content"
-							key={data.id}
+							key={uniqid()}
 						>
 							<div>
 								<h2>{data.name}</h2>

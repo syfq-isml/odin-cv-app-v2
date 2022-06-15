@@ -25,7 +25,7 @@ class App extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.deleteEducation = this.deleteEducation.bind(this);
 		this.editEducation = this.editEducation.bind(this);
-		this.showInputValues = this.showInputValues.bind(this);
+		this.confirmEditEducation = this.confirmEditEducation.bind(this);
 	}
 
 	handleGeneral(obj) {
@@ -64,7 +64,18 @@ class App extends Component {
 		});
 	}
 
-	showInputValues() {}
+	confirmEditEducation(e, obj) {
+		let id = e.target.dataset.id;
+		console.log(id);
+		this.setState((prevState) => {
+			let edu = [...prevState.education];
+			let index = edu.findIndex((item) => item.id === id);
+			console.log(index);
+			edu.splice(index, 1, obj);
+			console.log(obj);
+			return { education: edu, editObj: {}, editMode: false };
+		});
+	}
 
 	render() {
 		return (
@@ -75,6 +86,7 @@ class App extends Component {
 						handleEducation={this.handleEducation}
 						editObj={this.state.editObj}
 						editMode={this.state.editMode}
+						confirmEditEducation={this.confirmEditEducation}
 					/>
 					<WorkForm />
 				</section>

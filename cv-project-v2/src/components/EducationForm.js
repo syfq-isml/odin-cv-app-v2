@@ -22,6 +22,7 @@ class EducationForm extends Component {
 						<EducationFormEdit
 							handleEducation={this.props.handleEducation}
 							editObj={this.props.editObj}
+							confirmEditEducation={this.props.confirmEditEducation}
 						/>
 					</fieldset>
 				</div>

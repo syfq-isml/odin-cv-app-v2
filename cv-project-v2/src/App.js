@@ -18,6 +18,7 @@ class App extends Component {
 
 			editObj: {},
 			editMode: false,
+			editMode_work: false,
 		};
 
 		this.handleGeneral = this.handleGeneral.bind(this);
@@ -26,6 +27,9 @@ class App extends Component {
 		this.deleteEducation = this.deleteEducation.bind(this);
 		this.editEducation = this.editEducation.bind(this);
 		this.confirmEditEducation = this.confirmEditEducation.bind(this);
+		this.handleWork = this.handleWork.bind(this);
+		this.editWork = this.editWork.bind(this);
+		this.confirmEditWork = this.confirmEditWork.bind(this);
 	}
 
 	handleGeneral(obj) {
@@ -37,6 +41,12 @@ class App extends Component {
 	handleEducation(obj) {
 		this.setState((prevState) => ({
 			education: [...prevState.education, obj],
+		}));
+	}
+
+	handleWork(obj) {
+		this.setState((prevState) => ({
+			work: [...prevState.work, obj],
 		}));
 	}
 
@@ -77,6 +87,31 @@ class App extends Component {
 		});
 	}
 
+	editWork(e) {
+		this.setState((prevState) => {
+			let id = e.target.dataset.id;
+			let obj = prevState.work.find((item) => item.id === id);
+			return {
+				editMode_work: true,
+				editObj: obj,
+			};
+		});
+	}
+
+	confirmEditWork(e, obj) {
+		this.setState((prevState) => {
+			let id = e.target.dataset.id;
+			let workCopy = [...prevState.work];
+			let index = workCopy.findIndex((item) => item.id === id);
+			workCopy.splice(index, 1, obj);
+			return {
+				work: workCopy,
+				editObj: {},
+				editMode_work: false,
+			};
+		});
+	}
+
 	render() {
 		return (
 			<div id="overall-wrapper">
@@ -88,7 +123,12 @@ class App extends Component {
 						editMode={this.state.editMode}
 						confirmEditEducation={this.confirmEditEducation}
 					/>
-					<WorkForm />
+					<WorkForm
+						handleWork={this.handleWork}
+						editMode={this.state.editMode_work}
+						editObj={this.state.editObj}
+						confirmEditWork={this.confirmEditWork}
+					/>
 				</section>
 				<section id="render-section">
 					<RenderedCV
@@ -96,6 +136,8 @@ class App extends Component {
 						sendEducationDataFIRST={this.state.education}
 						deleteEducation={this.deleteEducation}
 						editEducation={this.editEducation}
+						workData={this.state.work}
+						editWork={this.editWork}
 					/>
 				</section>
 			</div>

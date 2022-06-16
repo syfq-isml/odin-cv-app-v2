@@ -20,11 +20,8 @@ class RenderedCV extends Component {
 					editEducation={this.props.editEducation}
 				/>
 				<WorkRender
-					company="Google Inc."
-					title="Web Developer"
-					desc="Designed multiple websites"
-					start="2021"
-					end="Present"
+					workData={this.props.workData}
+					editWork={this.props.editWork}
 				/>
 			</div>
 		);

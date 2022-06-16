@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import WorkFormFill from "./WorkFormFill";
+import WorkFormEdit from "./WorkFormEdit";
 
 class WorkForm extends Component {
 	constructor(props) {
@@ -6,22 +8,24 @@ class WorkForm extends Component {
 	}
 
 	render() {
+		if (this.props.editMode) {
+			return (
+				<div className="form-container">
+					<fieldset>
+						<legend>Work Experience</legend>
+						<WorkFormEdit
+							editObj={this.props.editObj}
+							confirmEditWork={this.props.confirmEditWork}
+						/>
+					</fieldset>
+				</div>
+			);
+		}
 		return (
 			<div className="form-container">
 				<fieldset>
 					<legend>Work Experience</legend>
-					<label htmlFor="full-name">Company Name</label>
-					<input id="full-name"></input>
-					<label htmlFor="email">Position Title</label>
-					<input id="email"></input>
-					<label htmlFor="phone-number">Duration Of Work</label>
-					<div className="flex-row-container">
-						<input placeholder="Start Date"></input>
-						<p> - </p>
-						<input placeholder="End Date"></input>
-					</div>
-					<label>Role Responsibilities</label>
-					<textarea></textarea>
+					<WorkFormFill handleWork={this.props.handleWork} />
 				</fieldset>
 			</div>
 		);

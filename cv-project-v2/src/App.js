@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./styles/normalize.css";
 import "./styles/styles.css";
 
+import Header from "./components/Header";
 import GeneralForm from "./components/GeneralForm";
 import EducationForm from "./components/EducationForm";
 import WorkForm from "./components/WorkForm";
@@ -135,33 +136,36 @@ class App extends Component {
 
 	render() {
 		return (
-			<div id="overall-wrapper">
-				<section id="form-section">
-					<GeneralForm getGeneralData={this.handleGeneral} />
-					<EducationForm
-						handleEducation={this.handleEducation}
-						editObj={this.state.editObj}
-						editMode={this.state.editMode}
-						confirmEditEducation={this.confirmEditEducation}
-					/>
-					<WorkForm
-						handleWork={this.handleWork}
-						editMode={this.state.editMode_work}
-						editObj={this.state.editObj_work}
-						confirmEditWork={this.confirmEditWork}
-					/>
-				</section>
-				<section id="render-section">
-					<RenderedCV
-						sendGeneralDataFIRST={this.state.general}
-						sendEducationDataFIRST={this.state.education}
-						deleteEducation={this.deleteEducation}
-						editEducation={this.editEducation}
-						deleteWork={this.deleteWork}
-						workData={this.state.work}
-						editWork={this.editWork}
-					/>
-				</section>
+			<div className="flex-column-container">
+				<Header />
+				<div id="overall-wrapper">
+					<section id="form-section">
+						<GeneralForm getGeneralData={this.handleGeneral} />
+						<EducationForm
+							handleEducation={this.handleEducation}
+							editObj={this.state.editObj}
+							editMode={this.state.editMode}
+							confirmEditEducation={this.confirmEditEducation}
+						/>
+						<WorkForm
+							handleWork={this.handleWork}
+							editMode={this.state.editMode_work}
+							editObj={this.state.editObj_work}
+							confirmEditWork={this.confirmEditWork}
+						/>
+					</section>
+					<section id="render-section">
+						<RenderedCV
+							sendGeneralDataFIRST={this.state.general}
+							sendEducationDataFIRST={this.state.education}
+							deleteEducation={this.deleteEducation}
+							editEducation={this.editEducation}
+							deleteWork={this.deleteWork}
+							workData={this.state.work}
+							editWork={this.editWork}
+						/>
+					</section>
+				</div>
 			</div>
 		);
 	}

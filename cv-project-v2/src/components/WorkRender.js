@@ -38,9 +38,9 @@ class WorkRender extends Component {
 					<div>
 						<h2>{item.name}</h2>
 						<p className="role-heading">{item.title}</p>
-						<p>{item.desc}</p>
+						<p className="white-space">{item.desc}</p>
 					</div>
-					<div>
+					<div className="flex-column-container">
 						<p>
 							{item.start} - {item.end}
 						</p>

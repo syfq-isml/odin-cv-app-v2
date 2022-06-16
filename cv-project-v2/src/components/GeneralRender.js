@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class GeneralRender extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		let { name, email, phone, address } = this.props.sendGeneralDataSECOND;
 

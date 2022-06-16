@@ -91,6 +91,7 @@ class EducationFormFill extends Component {
 					value={this.state.exp.achievements}
 					data-item="achievements"
 					onChange={this.handleChange}
+					onKeyUp={this.addLineBreak}
 					data-form-id={this.state.exp.id}
 				></textarea>
 				<button onClick={this.addEducation} className="add-btn">

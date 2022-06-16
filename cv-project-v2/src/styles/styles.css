@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 *,
 *::before,
 *::after,
@@ -7,6 +9,37 @@ h3 {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(220, 105, 105);
+	font-family: "Inter", sans-serif;
+}
+
+/* .header-js {
+	border-radius: 5px;
+	border: 15px solid rgb(88, 88, 88);
+	box-shadow: 0px 0px 10px 0px #2d0808;
+
+	background-color: rgb(67, 67, 67);
+} */
+
+/* #header-heading {
+	font-size: 4rem;
+	text-shadow: 2px 3px 8px #000000;
+	color: white;
+	margin: 10px 0;
+	padding: 10px 15px;
+	letter-spacing: 5px;
+} */
+
+#header-heading {
+	font-size: 6rem;
+	text-shadow: 2px 3px 8px #000000;
+	color: white;
+	margin: 5px 0;
+	padding: 5px 15px;
+	letter-spacing: 10px;
 }
 
 #overall-wrapper {
@@ -69,15 +102,23 @@ fieldset div div p {
 fieldset legend {
 	font-size: 1.5rem;
 	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 input,
 textarea {
 	background-color: rgb(40, 40, 40);
 	color: whitesmoke;
-	padding: 3px;
+	padding: 5px 3px;
 	border: 0;
 	border-radius: 3px;
+}
+
+input,
+textarea {
+	margin-top: 3px;
+	margin-bottom: 5px;
 }
 
 textarea {
@@ -204,4 +245,12 @@ textarea {
 
 .date {
 	align-self: flex-end;
+}
+
+.white-space {
+	white-space: pre-wrap;
+}
+
+textarea {
+	resize: vertical;
 }

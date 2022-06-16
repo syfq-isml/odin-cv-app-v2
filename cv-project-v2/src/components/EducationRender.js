@@ -38,7 +38,7 @@ class EducationRender extends Component {
 					<div>
 						<h2>{data.name}</h2>
 						<p>{data.course}</p>
-						<p>{data.achievements}</p>
+						<p className="white-space">{data.achievements}</p>
 					</div>
 					<div className="flex-column-container">
 						<p className="date">

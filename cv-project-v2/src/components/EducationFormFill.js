@@ -7,6 +7,7 @@ class EducationFormFill extends Component {
 		super(props);
 
 		this.state = {
+			filledOne: false,
 			exp: {
 				id: uniqid(),
 				name: "",
@@ -23,6 +24,7 @@ class EducationFormFill extends Component {
 	handleChange(e) {
 		let prop = e.target.getAttribute("data-item");
 		this.setState((prevState) => ({
+			filledOne: true,
 			exp: {
 				...prevState.exp,
 				[prop]: e.target.value,
@@ -31,8 +33,10 @@ class EducationFormFill extends Component {
 	}
 
 	addEducation() {
+		if (!this.state.filledOne) return;
 		this.props.handleEducation(this.state.exp);
 		this.setState({
+			filledOne: false,
 			exp: {
 				id: uniqid(),
 				name: "",

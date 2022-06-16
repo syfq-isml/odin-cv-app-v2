@@ -7,6 +7,7 @@ class WorkFormFill extends Component {
 		super(props);
 
 		this.state = {
+			filledOne: false,
 			exp: {
 				id: uniqid(),
 				name: "",
@@ -23,6 +24,7 @@ class WorkFormFill extends Component {
 
 	handleChange(e) {
 		this.setState((prevState) => ({
+			filledOne: true,
 			exp: {
 				...prevState.exp,
 				[e.target.dataset.item]: e.target.value,
@@ -31,8 +33,10 @@ class WorkFormFill extends Component {
 	}
 
 	handleClick() {
+		if (!this.state.filledOne) return;
 		this.props.handleWork(this.state.exp);
 		this.setState({
+			filledOne: false,
 			exp: {
 				id: uniqid(),
 				name: "",

@@ -93,7 +93,11 @@ class EducationFormEdit extends Component {
 					onChange={this.handleChange}
 					data-form-id={this.state.exp.id}
 				></textarea>
-				<button data-id={this.state.exp.id} onClick={this.confirmEdit}>
+				<button
+					data-id={this.state.exp.id}
+					onClick={this.confirmEdit}
+					className="confirm-btn"
+				>
 					Confirm Edit
 				</button>
 			</div>

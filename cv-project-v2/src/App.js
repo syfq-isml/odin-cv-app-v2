@@ -65,6 +65,7 @@ class App extends Component {
 			return {
 				education: newEdu,
 				editObj: {},
+				editObj_work: {},
 				editMode_work: false,
 				editMode: false,
 			};
@@ -99,6 +100,10 @@ class App extends Component {
 			let newWork = prevState.work.filter((item) => item.id !== id);
 			return {
 				work: newWork,
+				editObj: {},
+				editObj_work: {},
+				editMode_work: false,
+				editMode: false,
 			};
 		});
 	}

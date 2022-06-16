@@ -123,7 +123,11 @@ textarea {
 }
 
 .cv-content {
-	margin-top: 3px;
+	margin-top: 7px;
+}
+
+.cv-content-2 {
+	margin-top: 15px;
 }
 
 .add-btn {
@@ -146,6 +150,7 @@ textarea {
 }
 
 .del-btn {
+	align-self: flex-end;
 	cursor: pointer;
 	background-color: rgb(207, 32, 32);
 	color: white;
@@ -162,6 +167,7 @@ textarea {
 }
 
 .edit-btn {
+	align-self: flex-end;
 	cursor: pointer;
 	background-color: rgb(207, 114, 32);
 	color: white;
@@ -174,6 +180,25 @@ textarea {
 	width: fit-content;
 
 	border: 0;
+	border-radius: 3px;
+}
+
+.confirm-btn {
+	align-self: center;
+	cursor: pointer;
+	background-color: rgb(207, 136, 29);
+	color: white;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: 700;
+
+	margin-top: 5px;
+	padding: 15px 20px;
+	width: fit-content;
+
+	border: 0;
+	-webkit-box-shadow: 0px 3px 16px 4px rgba(38, 38, 38, 0.44);
+	box-shadow: 0px 3px 16px 4px rgba(38, 38, 38, 0.44);
 	border-radius: 3px;
 }
 

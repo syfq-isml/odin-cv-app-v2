@@ -88,7 +88,11 @@ class WorkFormEdit extends Component {
 					data-item="desc"
 					onChange={this.handleChange}
 				></textarea>
-				<button data-id={this.state.exp.id} onClick={this.handleClick}>
+				<button
+					data-id={this.state.exp.id}
+					onClick={this.handleClick}
+					className="confirm-btn"
+				>
 					Confirm Edit
 				</button>
 			</div>

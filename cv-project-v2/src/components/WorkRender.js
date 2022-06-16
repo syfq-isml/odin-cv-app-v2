@@ -20,7 +20,9 @@ class WorkRender extends Component {
 						<p>
 							{item.start} - {item.end}
 						</p>
-						<button data-id={item.id}>Delete</button>
+						<button data-id={item.id} onClick={this.props.deleteWork}>
+							Delete
+						</button>
 						<button data-id={item.id} onClick={this.props.editWork}>
 							Edit
 						</button>

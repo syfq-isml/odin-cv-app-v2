@@ -89,7 +89,9 @@ class EducationFormFill extends Component {
 					onChange={this.handleChange}
 					data-form-id={this.state.exp.id}
 				></textarea>
-				<button onClick={this.addEducation}>Add</button>
+				<button onClick={this.addEducation} className="add-btn">
+					Add
+				</button>
 			</div>
 		);
 	}

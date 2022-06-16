@@ -30,6 +30,7 @@ class App extends Component {
 		this.editEducation = this.editEducation.bind(this);
 		this.confirmEditEducation = this.confirmEditEducation.bind(this);
 		this.handleWork = this.handleWork.bind(this);
+		this.deleteWork = this.deleteWork.bind(this);
 		this.editWork = this.editWork.bind(this);
 		this.confirmEditWork = this.confirmEditWork.bind(this);
 	}
@@ -92,6 +93,16 @@ class App extends Component {
 		});
 	}
 
+	deleteWork(e) {
+		let id = e.target.dataset.id;
+		this.setState((prevState) => {
+			let newWork = prevState.work.filter((item) => item.id !== id);
+			return {
+				work: newWork,
+			};
+		});
+	}
+
 	editWork(e) {
 		this.setState((prevState) => {
 			let id = e.target.dataset.id;
@@ -141,6 +152,7 @@ class App extends Component {
 						sendEducationDataFIRST={this.state.education}
 						deleteEducation={this.deleteEducation}
 						editEducation={this.editEducation}
+						deleteWork={this.deleteWork}
 						workData={this.state.work}
 						editWork={this.editWork}
 					/>

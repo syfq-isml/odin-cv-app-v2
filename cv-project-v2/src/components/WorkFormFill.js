@@ -83,7 +83,9 @@ class WorkFormFill extends Component {
 					data-item="desc"
 					onChange={this.handleChange}
 				></textarea>
-				<button onClick={this.handleClick}>Add</button>
+				<button onClick={this.handleClick} className="add-btn">
+					Add
+				</button>
 			</div>
 		);
 	}

@@ -22,14 +22,15 @@ class EducationRender extends Component {
 								<p>{data.course}</p>
 								<p>{data.achievements}</p>
 							</div>
-							<div>
-								<p>
+							<div className="flex-column-container">
+								<p className="date">
 									{data.start} - {data.end}
 								</p>
 								<button
 									data-id={data.id}
 									data-index={i}
 									onClick={this.props.deleteEducation}
+									className="del-btn"
 								>
 									Delete
 								</button>
@@ -37,6 +38,7 @@ class EducationRender extends Component {
 									data-id={data.id}
 									data-index={i}
 									onClick={this.props.editEducation}
+									className="edit-btn"
 								>
 									Edit
 								</button>

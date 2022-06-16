@@ -22,6 +22,7 @@ class RenderedCV extends Component {
 				<WorkRender
 					workData={this.props.workData}
 					editWork={this.props.editWork}
+					deleteWork={this.props.deleteWork}
 				/>
 			</div>
 		);

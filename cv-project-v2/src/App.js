@@ -18,6 +18,8 @@ class App extends Component {
 
 			editObj: {},
 			editMode: false,
+
+			editObj_work: {},
 			editMode_work: false,
 		};
 
@@ -61,6 +63,9 @@ class App extends Component {
 			let newEdu = edu.filter((item) => item.id !== id);
 			return {
 				education: newEdu,
+				editObj: {},
+				editMode_work: false,
+				editMode: false,
 			};
 		});
 	}
@@ -93,7 +98,7 @@ class App extends Component {
 			let obj = prevState.work.find((item) => item.id === id);
 			return {
 				editMode_work: true,
-				editObj: obj,
+				editObj_work: obj,
 			};
 		});
 	}
@@ -106,7 +111,7 @@ class App extends Component {
 			workCopy.splice(index, 1, obj);
 			return {
 				work: workCopy,
-				editObj: {},
+				editObj_work: {},
 				editMode_work: false,
 			};
 		});
@@ -126,7 +131,7 @@ class App extends Component {
 					<WorkForm
 						handleWork={this.handleWork}
 						editMode={this.state.editMode_work}
-						editObj={this.state.editObj}
+						editObj={this.state.editObj_work}
 						confirmEditWork={this.confirmEditWork}
 					/>
 				</section>

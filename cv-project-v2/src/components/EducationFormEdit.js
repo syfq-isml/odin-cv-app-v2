@@ -19,6 +19,21 @@ class EducationFormEdit extends Component {
 		this.confirmEdit = this.confirmEdit.bind(this);
 	}
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.editObj !== this.props.editObj) {
+			this.setState({
+				exp: {
+					id: this.props.editObj.id,
+					name: this.props.editObj.name,
+					course: this.props.editObj.course,
+					start: this.props.editObj.start,
+					end: this.props.editObj.end,
+					achievements: this.props.editObj.achievements,
+				},
+			});
+		}
+	}
+
 	handleChange(e) {
 		let prop = e.target.getAttribute("data-item");
 		this.setState((prevState) => ({
